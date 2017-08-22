@@ -1,0 +1,9 @@
+localhost:
+  port: 2000
+
+udp:
+  server:
+    host: 127.0.0.1
+    port: 8008
+logging:
+    config: classpath:logback-spring.xml
