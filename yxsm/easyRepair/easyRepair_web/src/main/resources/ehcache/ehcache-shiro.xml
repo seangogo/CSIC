@@ -1,0 +1,17 @@
+<ehcache updateCheck="false" name="shiroCache">
+    <!--
+            maxElementsInMemory为缓存对象的最大数目, 
+            eternal设置是否永远不过期,
+            timeToIdleSeconds对象处于空闲状态的最多秒数,
+            timeToLiveSeconds对象处于缓存状态的最多秒数 
+     -->
+    <defaultCache
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            overflowToDisk="false"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="120"
+    />
+</ehcache>

@@ -1,0 +1,43 @@
+table.dataTable {clear: both;margin-top: 0px !important;  margin-bottom: 0px !important; max-width: none !important;}
+
+
+/*查询弹出框*/
+.ui-widget-overlay{height: 100%; width: 100%; position: fixed; left: 0px; top: 0px;  display: none;}
+.ui-jqdialog{ position: absolute;width: 450px; height: auto;overflow: hidden; top: 130px; left:30px; display: none;}
+.ui-jqdialog-titlebar{position: relative;}
+.widget-header{line-height: 40px; text-align: left;}
+.ui-dialog .ui-dialog-titlebar-close, .ui-dialog .ui-jqdialog-titlebar-close, .ui-jqdialog .ui-dialog-titlebar-close, .ui-jqdialog .ui-jqdialog-titlebar-close{float:right;top:7px; position: absolute;}
+.searchFilter{height:200px; overflow: auto; overflow-x: hidden;}
+.ui-search-table{border:0px none;}
+.tabletitlesel{width: 30%;}
+.operators{width: 25%;}
+.data{width:45%}
+.EditTable{width: 100%;}
+.ui-jqdialog-content .searchFilter select {padding: 1px; height: 26px; line-height: 26px; width: 100%; max-width: 95%; margin-bottom: 0;}
+
+/*查询弹出框*/
+
+.rongcloud-blueBg{ background: #307ECC;background-image: linear-gradient(to bottom, #FFFFFF 0%, #EEEEEE 100%);border:1px solid #ccc;}
+.rongcloud-kefuListBox .rongcloud-kefuList .rongcloud-recent{color: #478FCA !important;}
+.rongcloud-kefuChat .rongcloud-rong-header .rongcloud-kefuName{color: #478FCA !important;}
+.rongcloud-kefuListBox .rongcloud-kefuList .rongcloud-content{border:1px solid #ccc; border-top:none}
+#Messages{ border:1px solid #ccc; border-top:none; border-bottom: none;}
+.rongcloud-rong-footer{border:1px solid #ccc; border-top:none;}
+.rongcloud-rong-send-btn{width: 70px;height: 33px;background: #6FB3E0 !important;border-radius:0px}
+.rongcloud-expressionWrap{top: -193px;}
+.rongcloud-kefuChat{position: fixed;width: 445px; height: 470px;left: 201px;right: 0px;bottom: 3px;}
+.rongcloud-rong-send-btn:hover{border:4px solid #6FB3E0;}
+
+
+/*#searchmodfbox_grid-table{ display: block;;}*/
+.ui-dialog, .ui-jqdialog{ border: none;}
+.ui-jqdialog .ui-jqdialog-content, .ui-jqdialog-content{ background: #fff;}
+table.dataTable, table.dataTable td, table.dataTable th{ text-align: left;}
+table.dataTable, table.dataTable td:first-child{ text-align: center;}
+
+table.dataTable, table.dataTable td.lr{ text-align: right}
+
+table.dataTable td a{
+    cursor:pointer;
+}
+

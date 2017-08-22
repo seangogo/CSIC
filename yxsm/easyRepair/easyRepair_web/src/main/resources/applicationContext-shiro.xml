@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd"
+       default-lazy-init="true">
+
+    <description>Shiro安全配置</description>
+
+    <!-- Shiro Filter -->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="/login/backend"/><!--/backendLogin-->
+        <property name="successUrl" value="/index"/>
+        <!--<property name="unauthorizedUrl" value="/"/>&lt;!&ndash;没有权限默认跳转的页面&ndash;&gt;-->
+        <property name="filterChainDefinitions">
+            <value>
+                <!--所有的请求(除去配置的静态资源请求或请求地址为anon的请求)都要通过登录验证,如果未登录则跳到/login-->
+                /uploadFiles/** = anon
+                /favicon.ico=anon
+                /static/** = anon
+                /api/** = anon
+                /swagger/** = anon
+                /v2/** = anon
+                /register/** = anon
+                /logout = logout
+                <!--/**=user-->
+                <!--/login/backend = authc-->
+                <!-- anon表示此地址不需要任何权限即可访问 -->
+                /** = authc
+            </value>
+        </property>
+    </bean>
+
+    <!-- Shiro's main business-tier object for web-enabled applications -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="shiroDbRealm"/>
+        <property name="cacheManager" ref="shiroEhcacheManager"/>
+        <!-- 记住我 -->
+        <property name="rememberMeManager" ref="rememberMeManager"/>
+    </bean>
+
+    <!-- 項目自定义的Realm, 所有accountService依赖的dao都需要用depends-on声明 -->
+    <bean id="shiroDbRealm" class="com.easyRepair.service.shiro.ShiroDbRealm">
+        <property name="shiroService" ref="shiroServiceImpl"/>
+        <!--<property name="credentialsMatcher" ref="credentialsMatcher" />-->
+    </bean>
+
+    <bean id="shiroServiceImpl" class="com.easyRepair.service.shiro.ShiroServiceImpl"></bean>
+
+    <!-- 用户授权信息Cache, 采用EhCache -->
+    <bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:ehcache/ehcache-shiro.xml"/>
+    </bean>
+
+    <!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <!-- rememberMeManager管理器 -->
+    <bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+        <property name="cookie" ref="rememberMeCookie"/>
+    </bean>
+    <!-- 记住我cookie -->
+    <bean id="rememberMeCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg value="rememberMe"/>
+        <!-- 记住我cookie生效时间30天 -->
+        <property name="maxAge" value="2592000"/>
+    </bean>
+
+</beans>

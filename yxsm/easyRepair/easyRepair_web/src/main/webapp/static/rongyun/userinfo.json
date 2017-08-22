@@ -1,0 +1,8 @@
+{"userlist":[
+  {"id":"aa","name":"张三","portraitUri":"static/images/avatars/avatar.png"},
+  {"id":"bb","name":"李四","portraitUri":"static/images/avatars/avatar1.png"},
+  {"id":"cc","name":"王五","portraitUri":"static/images/avatars/avatar1.png"},
+  {"id":"dd","name":"赵六","portraitUri":"static/images/avatars/avatar3.png"},
+  {"id":"152719088280","name":"qq","portraitUri":"static/images/avatars/avatar4.png"}, 
+  {"id":"152719088281","name":"ww","portraitUri":"static/images/avatars/avatar5.png"}
+  ]}

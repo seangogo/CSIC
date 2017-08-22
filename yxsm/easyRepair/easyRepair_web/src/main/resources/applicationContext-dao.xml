@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	   http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd"
+       default-lazy-init="true">
+
+
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:conf/*.properties</value>
+            </list>
+        </property>
+    </bean>
+    <!--数据源-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="${jdbc.driver}"></property>
+        <property name="jdbcUrl" value="${jdbc.url}"></property>
+        <property name="user" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+
+        <!-- 详细参数说明参见database-config.properties -->
+        <property name="checkoutTimeout" value="${c3p0.checkoutTimeout}"/>
+        <property name="initialPoolSize" value="${c3p0.initialPoolSize}"></property>
+        <property name="minPoolSize" value="${c3p0.minPoolSize}"></property>
+        <property name="maxPoolSize" value="${c3p0.maxPoolSize}"></property>
+        <property name="maxIdleTime" value="${c3p0.maxIdleTime}"></property>
+        <property name="acquireIncrement" value="${c3p0.acquireIncrement}"></property>
+        <property name="idleConnectionTestPeriod" value="${c3p0.idleConnectionTestPeriod}"></property>
+        <property name="acquireRetryAttempts" value="${c3p0.acquireRetryAttempts}"></property>
+        <property name="breakAfterAcquireFailure" value="${c3p0.breakAfterAcquireFailure}"></property>
+        <property name="maxStatements" value="${c3p0.maxStatements}"></property>
+        <property name="testConnectionOnCheckout" value="${c3p0.testConnectionOnCheckout}"></property>
+    </bean>
+
+    <!--jpa设置-->
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="com.easyRepair.tabEntity"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="generateDdl" value="true"/>
+                <property name="database" value="MYSQL"/>
+            </bean>
+        </property>
+        <property name="jpaProperties">
+            <props>
+                <!-- 命名规则 My_NAME->MyName -->
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.use_sql_comments">true</prop>
+                <prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
+            </props>
+        </property>
+        <property name="jpaDialect">
+            <bean class="com.easyRepair.service.commons.HibernateJpaIsolationSupportDialect"/>
+        </property>
+        <property name="persistenceUnitName" value="service.jpa"/>
+    </bean>
+    <!-- 配置Spring Data JPA扫描目录 -->
+    <bean class="com.easyRepair.entityUtils.SwaggerConfig"/>
+
+    <jpa:repositories base-package="com.easyRepair.dao"/>
+
+    <context:component-scan base-package="com.easyRepair.*"/>
+    <task:scheduled-tasks>
+        <!--0 0/5 * * * *-->
+        <task:scheduled ref="orderApiController" method="orderOvertime" cron="0 0 12 * * ?"/>
+    </task:scheduled-tasks>
+</beans>
