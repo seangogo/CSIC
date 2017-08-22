@@ -1,0 +1,94 @@
+.search-input {
+	font-size: 13px !important;
+	border-radius: 4px !important;
+	/* border: 1px solid #6fb3e0 !important; */
+}
+
+.btn-sm>.ace-icon.icon-on-right {
+	margin: 0px !important;
+}
+
+.inverse {
+	color: #555555 !important;
+}
+
+.right {
+	float: right !important;
+}
+
+.left {
+	float: left !important;
+}
+
+.form-group .bootstrap-select {
+	width: 100% !important;
+}
+
+.order-detail  li {
+	clear: both;
+}
+
+.bannerList td {
+	line-height: 100px !important;
+}
+
+.order-list-form .datepicker {
+	width: 220px;
+	padding-right: 3px;
+}
+
+.order-list-form .datepicker  input {
+	height: 34px;
+}
+
+.gray {
+	color: #abbac3;
+}
+
+.my_loading {
+	display: none;
+	position: absolute;
+	top: 0px;
+	z-index: 9999;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.my_loading .my_loading_toast {
+	position: fixed;
+	z-index: 9999;
+	width: 8.2em;
+	min-height: 7.6em;
+	top: 30%;
+	left: 45%;
+	background: rgba(40, 40, 40, 0.75);
+	text-align: center;
+	border-radius: 5px;
+	color: #FFFFFF;
+}
+
+.my_loading .my_loading_toast p {
+	margin-top: 6px;
+}
+
+.resource-button .btn>.ace-icon {
+	margin: 0;
+}
+
+.log-list-form .datepicker {
+	width: 220px;
+	padding-right: 3px;
+}
+
+.log-list-form .datepicker  input {
+	height: 34px;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}

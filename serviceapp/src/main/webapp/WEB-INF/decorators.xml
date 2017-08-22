@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/layouts/">
+	<excludes>
+		<pattern>/uploadFiles/*</pattern>
+		<pattern>/static/*</pattern>
+		<pattern>/api/*</pattern>
+	</excludes>
+	
+	<decorator name="main" page="main.jsp">
+		<pattern>/*</pattern>
+	</decorator>
+	<decorator name="blank" page="blank.jsp">
+		<pattern>/login</pattern>
+		<pattern>/system/news/content</pattern>
+	</decorator>
+</decorators>

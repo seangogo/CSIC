@@ -1,0 +1,67 @@
+.btn{border:none}
+/*在992px以下设备的样式*/
+
+.dropdown-menu.dropdown-close {
+    top: 60%;
+    left: -5px;
+}
+.dateinp{overflow:hidden}
+.midinput {
+    padding: 0px;
+    margin-top: 5px;
+  
+}
+.btninput{ margin-top:5px;}
+
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+		width: 100%; 
+}
+.dataTables_paginate { text-align:center;}
+.dataTables_info {
+    font-size: 14px;
+    text-align: center;
+}
+.dataTables_paginate .pagination {
+	    /* margin: 0 12px; */
+	   margin:0px;
+	   
+	}
+	
+.hiddenbtn{width:25px;margin:0 auto;}
+.hiddenbtn button{width:25px;height: 25px;}
+.engineerSelfSale{height:400px; width:100%;float: none;margin-right:0}
+.companySale{height:400px; width:100%;float: none;margin-top:120px;}
+/*在992px以下设备的样式*/
+
+
+/*在992px以上设备的样式*/
+@media (min-width: 992px){ 
+	.engineerSelfSale{height:400px; width:48%;width:100%\0;float: left;float: none\0;margin-right:3%}
+	.companySale{height:400px; width:45%;width:100%\0;float: left;float: none\0;margin-top:0px;}
+	.btnselect{margin-right: 5px; float: left;}
+	.midinput{ padding:12px;margin-top:-12px;}
+	.btninput{ margin-top:0px;}
+	.dataTables_paginate {
+    	text-align: center;
+	}
+	.dataTables_paginate .pagination {
+	    /* margin: 0 12px; */
+	   margin:0px;
+	}
+	.dataTables_paginate { text-align:right;}
+	.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+		width: 220px; 
+	}
+	.dataTables_info {
+    font-size: 14px;
+    text-align: left;
+}
+}
+/*在992px以上设备的样式*/
+
+
+
+/*所有设备通用样式*/
+.searchbtn{margin-right:1px; float:right;width:100px; border: 5px solid #FFF;}
+
+/*所有设备通用样式*/

@@ -1,0 +1,108 @@
+h1{font-family: "微软雅黑";}
+body{background: #fff;}
+ul{margin: 10px;}
+
+ul li{list-style: none; padding: 0px; margin: 0px; }
+.rtable{padding:0px;}
+.leftbar {width: 190px; float: left;  position: relative;  border: 1px solid #ccc; background-color: none;height: 100%;
+}
+
+.head{padding-left:0px;padding-right:0px; padding: 0px;margin-bottom: 0px;}
+
+.fenpeipage{overflow-x: hidden;}
+
+.fenpeipage input{width:50px;display: block;float: left;}
+.fenpeipage td p{float: left; height: 0px;line-height: 30px;}
+.fenpeipage .text{width:200px; display: block;margin-left:20px;float: left;color:#ffb752;height: 0px;line-height: 30px; font-weight: bold;}
+.fenpeipage .personName{ text-align: right;}
+.tab-content{padding-bottom: 0px;}
+.table { width: 100%; margin: 0px;}
+.tab-content {
+    padding: 20px;
+    position: relative;
+    z-index: 11;
+}
+
+@media (max-width: 767px){
+	.table-responsive {
+	    width: 100%;
+	    margin-bottom: 15px;
+	    overflow: hidden;
+	    -ms-overflow-style: -ms-autohiding-scrollbar;
+	    -webkit-overflow-scrolling: touch;
+	}
+}
+
+
+
+.rightcontent{padding: 0px;border-bottom: none;}
+
+.tablerow{padding:15px;border:none }
+.tablerow1{padding:15px 15px 0 15px;border:none }
+.payinfo{padding:15px;}
+.header-color-orange+.widget-body { border-color: #ccc;}
+.infoscroll{height: 50px;}
+
+.underpay ul{display: block; border-left:3px solid #eee; background: #F8F8F8;padding: 10px;margin-left:0px;color:#333;width: 100%;}
+.underpay .list-unstyled{border:none;color:#333;}
+
+body span { top: 0px;}
+
+.listdetail li{float: left; width:33%;}
+.listdetail .ctime{float: left; width:50%;}
+.listdetail .address{float: left; width:100%;}
+
+
+.btn-group{width:40%;}
+.btn-group .btn{width:100%;}
+.btn-group>.btn, .btn-group+.btn {
+    margin: 0 1px 0 0;
+    border-width: 1px;
+    border-color: #8aafce;
+    color: #6688a6 !important;
+}
+.btn-white.btn-info:hover {
+    color: #5896bf !important;
+}
+@media (max-width: 767px){
+    .listdetail li{width:100%;}
+    .listdetail .ctime{width:100%;}
+    .btn-group{width:100%;}
+	.col-md-12,.col-xs-12{padding: 0px;}
+	.fenpeipage b, strong { line-height: 2;}
+}
+
+.menulist {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 100%;
+    padding: 5px 0;
+    margin: -2px 0 0;
+    font-size: 14px;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    background-clip: padding-box;
+    max-height:300px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.fenpeipage .dropdown-toggle{border: 1px solid #8aafce;}
+.righttitle{clear:both;padding-top:10px;line-height: 30px;}
+
+
+
+
+.fenpeipage .page-content{padding:0px;}
+.widget-box > .widget-header > .widget-toolbar > [data-action="reload"], .widget-color-dark > .widget-header > .widget-toolbar > [data-action="reload"], .widget-box > .widget-header > .widget-toolbar > .widget-menu > [data-action="reload"], .widget-color-dark > .widget-header > .widget-toolbar > .widget-menu > [data-action="reload"] {color: #777;}
+
+.fenpeipage .widget-box {border: none}
+.fenpeipage  .main {padding: 0px 0px;}
